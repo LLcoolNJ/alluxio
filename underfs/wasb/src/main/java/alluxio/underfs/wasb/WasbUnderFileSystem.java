@@ -54,13 +54,13 @@ public class WasbUnderFileSystem extends HdfsUnderFileSystem {
       hadoopConf.set("fs.AbstractFileSystem.wasb.Impl",
           Configuration.get(PropertyKey.UNDERFS_WASB_IMPL));
       hadoopConf.set(
-          "fs.azure.account.key." +
-          Configuration.get(PropertyKey.UNDERFS_WASB_STORAGE_ACCOUNT) + ".blob.core.windows.net",
+          "fs.azure.account.key." + Configuration.get(PropertyKey.UNDERFS_WASB_STORAGE_ACCOUNT)
+          + ".blob.core.windows.net",
           Configuration.get(PropertyKey.WASB_ACCESS_KEY));
       hadoopConf.set(
           "fs.defaultFS",
-          "wasb://" + Configuration.get(PropertyKey.UNDERFS_WASB_CONTAINER) + "@" +
-          Configuration.get(PropertyKey.UNDERFS_WASB_STORAGE_ACCOUNT) + ".blob.core.windows.net");
+          "wasb://" + Configuration.get(PropertyKey.UNDERFS_WASB_CONTAINER) + "@"
+          + Configuration.get(PropertyKey.UNDERFS_WASB_STORAGE_ACCOUNT) + ".blob.core.windows.net");
     } else {
       // If not Azure Blob Storage fall back to default HDFS behavior
       // This should only happen if someone creates an instance of this directly rather than via the
