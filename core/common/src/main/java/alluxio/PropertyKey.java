@@ -498,8 +498,10 @@ public enum PropertyKey {
     public static final String UNDERFS_S3_UPLOAD_THREADS_MAX =
         "alluxio.underfs.s3.upload.threads.max";
     public static final String UNDERFS_WASB_IMPL = "alluxio.underfs.wasb.impl";
-    public static final String UNDERFS_WASB_STORAGE_ACCOUNT = "alluxio.underfs.wasb.storage.account";
-    public static final String UNDERFS_WASB_CONTAINER = "alluxio.underfs.wasb.container";
+    public static final String UNDERFS_WASB_STORAGE_ACCOUNT =
+            "alluxio.underfs.wasb.storage.account";
+    public static final String UNDERFS_WASB_CONTAINER =
+            "alluxio.underfs.wasb.container";
 
 
     //
