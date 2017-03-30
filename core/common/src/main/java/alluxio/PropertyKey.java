@@ -61,7 +61,7 @@ public enum PropertyKey {
   UNDERFS_HDFS_CONFIGURATION(Name.UNDERFS_HDFS_CONFIGURATION,
       String.format("${%s}/core-site.xml", Name.CONF_DIR)),
   UNDERFS_HDFS_IMPL(Name.UNDERFS_HDFS_IMPL, "org.apache.hadoop.hdfs.DistributedFileSystem"),
-  UNDERFS_HDFS_PREFIXES(Name.UNDERFS_HDFS_PREFIXES, "hdfs://,glusterfs:///,maprfs:///"),
+  UNDERFS_HDFS_PREFIXES(Name.UNDERFS_HDFS_PREFIXES, "hdfs://,glusterfs:///,maprfs:///,wasb://"),
   UNDERFS_HDFS_REMOTE(Name.UNDERFS_HDFS_REMOTE, false),
   UNDERFS_OBJECT_STORE_MOUNT_SHARED_PUBLICLY(Name.UNDERFS_OBJECT_STORE_MOUNT_SHARED_PUBLICLY,
       false),
@@ -87,7 +87,11 @@ public enum PropertyKey {
   UNDERFS_S3A_SERVER_SIDE_ENCRYPTION_ENABLED(Name.UNDERFS_S3A_SERVER_SIDE_ENCRYPTION_ENABLED,
       false),
   UNDERFS_S3A_SOCKET_TIMEOUT_MS(Name.UNDERFS_S3A_SOCKET_TIMEOUT_MS, 50000),
-
+  UNDERFS_WASB_IMPL(Name.UNDERFS_WASB_IMPL,
+          "org.apache.hadoop.fs.azure.Wasb"),
+  UNDERFS_WASB_STORAGE_ACCOUNT(Name.UNDERFS_WASB_STORAGE_ACCOUNT, null),
+  UNDERFS_WASB_CONTAINER(Name.UNDERFS_WASB_CONTAINER, null),
+  WASB_ACCESS_KEY(Name.WASB_ACCESS_KEY, null),
   //
   // UFS access control related properties
   //
@@ -493,6 +497,10 @@ public enum PropertyKey {
     public static final String UNDERFS_S3_THREADS_MAX = "alluxio.underfs.s3.threads.max";
     public static final String UNDERFS_S3_UPLOAD_THREADS_MAX =
         "alluxio.underfs.s3.upload.threads.max";
+    public static final String UNDERFS_WASB_IMPL = "alluxio.underfs.wasb.impl";
+    public static final String UNDERFS_WASB_STORAGE_ACCOUNT = "alluxio.underfs.wasb.storage.account";
+    public static final String UNDERFS_WASB_CONTAINER = "alluxio.underfs.wasb.container";
+
 
     //
     // UFS access control related properties
@@ -515,7 +523,7 @@ public enum PropertyKey {
     public static final String SWIFT_USER_KEY = "fs.swift.user";
     public static final String SWIFT_USE_PUBLIC_URI_KEY = "fs.swift.use.public.url";
     public static final String SWIFT_REGION_KEY = "fs.swift.region";
-
+    public static final String WASB_ACCESS_KEY = "alluxio.underfs.wasb.key";
     //
     // Master related properties
     //
