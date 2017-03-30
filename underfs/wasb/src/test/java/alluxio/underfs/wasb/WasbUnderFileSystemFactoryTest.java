@@ -48,15 +48,12 @@ public class WasbUnderFileSystemFactoryTest {
   @Test
   public void factory() {
     UnderFileSystemFactory factory =
-            UnderFileSystemRegistry.find("wasb://localhost/test/path");
-    Assert.assertNotNull(
-   "A UnderFileSystemFactory should exist for" +
-            " Azure Blob torage paths when using this module",
-            factory);
-
+        UnderFileSystemRegistry.find("wasb://localhost/test/path");
+    Assert.assertNotNull("A UnderFileSystemFactory should exist for" +
+        " Azure Blob torage paths when using this module",
+        factory);
     factory = UnderFileSystemRegistry.find("alluxio://localhost/test/path");
     Assert.assertNull("A UnderFileSystemFactory should not " +
-            "exist for unsupported paths when using"
-            + " this module.", factory);
+        "exist for unsupported paths when using this module.", factory);
   }
 }
