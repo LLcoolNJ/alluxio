@@ -502,8 +502,6 @@ public enum PropertyKey {
             "alluxio.underfs.wasb.storage.account";
     public static final String UNDERFS_WASB_CONTAINER =
             "alluxio.underfs.wasb.container";
-
-
     //
     // UFS access control related properties
     //
