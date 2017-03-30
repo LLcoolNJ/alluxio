@@ -11,15 +11,11 @@
 
 package alluxio.underfs.wasb;
 
-import alluxio.Configuration;
-import alluxio.PropertyKey;
 import alluxio.underfs.UnderFileSystem;
 import alluxio.underfs.UnderFileSystemFactory;
 import alluxio.underfs.UnderFileSystemRegistry;
 
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
-import org.junit.Assume;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -54,11 +50,13 @@ public class WasbUnderFileSystemFactoryTest {
     UnderFileSystemFactory factory =
             UnderFileSystemRegistry.find("wasb://localhost/test/path");
     Assert.assertNotNull(
-            "A UnderFileSystemFactory should exist for Azure Blob torage paths when using this module",
+   "A UnderFileSystemFactory should exist for" +
+            " Azure Blob torage paths when using this module",
             factory);
 
     factory = UnderFileSystemRegistry.find("alluxio://localhost/test/path");
-    Assert.assertNull("A UnderFileSystemFactory should not exist for unsupported paths when using"
+    Assert.assertNull("A UnderFileSystemFactory should not " +
+            "exist for unsupported paths when using"
             + " this module.", factory);
   }
 }
